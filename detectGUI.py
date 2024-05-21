@@ -10,11 +10,20 @@ window.geometry("700x400")
 arp_output = subprocess.check_output(["arp", "-a"], universal_newlines=True)
 print(arp_output)
 
+#create a txt file
 with open("./arp_result.txt", "w", encoding="utf-8") as f:
     f.write(arp_output)
 
-with open('arp_result.txt', 'r', encoding="utf-8") as f:
-    lines = f.readlines()
+#open the file
+try:
+    with open('arp_result.txt', 'r', encoding="utf-8") as f:
+        lines = f.readlines()
+except:
+    print("파일 생성 오류")
+    
+finally:
+    with open('arp_result.txt', 'r', encoding="utf-8") as f:
+        lines = f.readlines()
 
 # create an empty list for IP and MAC
 ip_address = [[] for _ in range(5)]
