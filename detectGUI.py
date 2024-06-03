@@ -11,7 +11,7 @@ arp_output = subprocess.check_output(["arp", "-a"], universal_newlines=True)
 print(arp_output)
 
 #create a txt file
-with open("./arp_result2.txt", "w", encoding="utf-8") as f:
+with open("./arp_result.txt", "w", encoding="utf-8") as f:
     f.write(arp_output)
 
 #open the file
@@ -19,7 +19,7 @@ try:
     with open('arp_result.txt', 'r', encoding="utf-8") as f:
         lines = f.readlines()
 except:
-    print("파일 생성 오류")
+    print("error with IO")
     exit() #exit 
     
 
