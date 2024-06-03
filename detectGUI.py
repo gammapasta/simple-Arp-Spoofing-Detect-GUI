@@ -11,7 +11,7 @@ arp_output = subprocess.check_output(["arp", "-a"], universal_newlines=True)
 print(arp_output)
 
 #create a txt file
-with open("./arp_result.txt", "w", encoding="utf-8") as f:
+with open("./arp_result2.txt", "w", encoding="utf-8") as f:
     f.write(arp_output)
 
 #open the file
@@ -26,9 +26,9 @@ finally:
         lines = f.readlines()
 
 # create an empty list for IP and MAC
-ip_address = [[] for _ in range(5)]
-mac_address = [[] for _ in range(5)]
-name = [0] * 5
+ip_address = [[] for _ in range(20)]
+mac_address = [[] for _ in range(20)]
+name = [0] * 20 
 nameNum = 0
 
 # get lines from .txt
@@ -39,12 +39,12 @@ for line in lines:
         # print(name[nameNum])
         nameNum += 1
     if len(parts) == 3:  # 공백이 3줄로 나누어질 때
-        if parts[1] != "ff-ff-ff-ff-ff-ff":
+        if parts[1] != "ff-ff-ff-ff-ff-ff": #2번쨰 자리가 브로그캐스트는 제외
             ip_address[nameNum - 1].append(parts[0])
             mac_address[nameNum - 1].append(parts[1])
 
 
-# 결과 출력
+# print results
 print("IP 주소 목록:")
 print(ip_address)
 print("\nMAC 주소 목록:")
@@ -52,7 +52,7 @@ print(mac_address, "\n\n")
 
 arr = []
 
-# Text 위젯 생성
+# Text weget
 text = Text(window)
 text.pack()
 
