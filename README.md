@@ -1,2 +1,2 @@
-# simple-Arp-Spoofing-Detect-GUI
-simple Arp Spoofing Detect GUI using python
+# simple-Arp-Spoofing-Detector-GUI
+simple Arp Spoofing Detector GUI using python
