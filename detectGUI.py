@@ -20,10 +20,8 @@ try:
         lines = f.readlines()
 except:
     print("파일 생성 오류")
+    exit() #exit 
     
-finally:
-    with open('arp_result.txt', 'r', encoding="utf-8") as f:
-        lines = f.readlines()
 
 # create an empty list for IP and MAC
 ip_address = [[] for _ in range(20)]
